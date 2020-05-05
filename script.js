@@ -15,11 +15,22 @@ $("#button-addon2").on("click", function(){
         console.log(response);
         console.log(queryURL);
         
-        var cityDiv = $("<div>");
         var date = moment().format('LL');
-        console.log(date);
-        var cityTemp = (((response.main.temp - 273.15)*1.8)+32).toFixed();
+        var citySearchDate = $("<h2>").html(response.name + " (" + date + ")");
+        console.log(citySearchDate);
+        
+        var cityTemp = ((((response.main.temp - 273.15)*1.8)+32).toFixed()+" F");
         console.log(cityTemp);
+        var cityTempTag = $("<p>").text("Temperature: " + cityTemp);
+        var humidity = response.main.humidity + "%";
+        humidityTag = $("<p>").text("Humidity: " + humidity);
+        console.log(humidity);
+        var windSpeed = response.wind.speed + " MPH";
+        var windSpeedTag = $("<p>").text("Wind Speed: " + windSpeed);
+        $(".row.current-temp").append(citySearchDate);
+        // var uvIndex = 
+
+
     })
 })
 {
