@@ -1,7 +1,17 @@
 #header {
     height: 80px;
     text-align: center;
-    background: darkgrey;
+    background: darkslategray;
     color: white;
     font-size: 70px;
+}
+
+.input-group {
+    margin: 20px;
+}
+
+.list-group-item{
+    margin: 20px;
+    font-size: 30px;
+    margin-left: 35px;
 }
