@@ -14,10 +14,7 @@
 
 .list-group {
     width: 80% !important;
-}
-
-.list-group-item {
-    font-size: 25px;
+    font-size: 20px;
     margin-left: 35px;
     height: 40px;
 }
@@ -34,6 +31,10 @@
 .forecast {
     background: blue;
     color: white;
+}
+
+.padding-left {
+    padding-left: 10px;
 }
 
 .margin {

@@ -1,5 +1,24 @@
 $(document).ready(function(){
-$("#one .list-group-item").val(localStorage.getItem("first"));
+var cities = localStorage.getItem("cityHistory");
+var cityJSON = JSON.parse(cities);
+
+if (cityJSON && cityJSON.length > 0){
+for (var i = 0; i < cityJSON.length; i++){
+    var city = $("<li>").addClass("list-group-item list-group-item-action").text(cityJSON[i]);
+    $(".cities").prepend(city);
+    if (i == cityJSON.length-1) {
+        currentWeather(cityJSON[i]);
+        forecast(cityJSON[i]);
+    }
+}} else {
+    cityJSON = [];
+}
+$(".cities").on("click", "li", function(){
+    var buttonText = $(this).text();
+    console.log(buttonText);
+    currentWeather(buttonText);
+    forecast(buttonText);
+})
 
 $("#button-addon2").on("click", function(){
     var parent = $(this).parents();
@@ -7,7 +26,10 @@ $("#button-addon2").on("click", function(){
     console.log(citySearch);
     currentWeather(citySearch);
     forecast(citySearch);
-    localStorage.setItem("first", JSON.stringify(citySearch));
+    cityJSON.push(citySearch);
+    localStorage.setItem("cityHistory", JSON.stringify(cityJSON));
+    var city = $("<li>").addClass("list-group-item list-group-item-action").text(citySearch);
+    $(".cities").prepend(city);
 });    
 
 function currentWeather(param){
