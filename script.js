@@ -20,7 +20,7 @@ $.ajax({
     var date = moment().format('LL');
     var lat = response.coord.lat;
     var lon = response.coord.lon;
-    var citySearchDate = $(".card-title").text(response.name + ", " + response.sys.country + " (" + date + ")");
+    var citySearchDate = $(".card-title.current").text(response.name + ", " + response.sys.country + " (" + date + ")");
     console.log(response.weather.icon);
     var cityTemp = ((((response.main.temp - 273.15)*1.8)+32).toFixed());
     var cityTempTag = $(".temp").text("Temperature: " + cityTemp + " F");
@@ -50,10 +50,9 @@ $.ajax({
         }
         $(".uv").text("UV Index: " + uvindex);
     })
-})
+})};
 
-
-};
+// function forecast
 
 
 
