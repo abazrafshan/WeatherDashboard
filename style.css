@@ -11,9 +11,15 @@
     width: 70% !important;
 }
 
+
+.list-group {
+    width: 80% !important;
+}
+
 .list-group-item {
     font-size: 25px;
     margin-left: 35px;
+    height: 40px;
 }
 
 .card-body {
