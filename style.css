@@ -8,10 +8,10 @@
 
 .input-group {
     margin: 20px;
+    width: 70% !important;
 }
 
-.list-group-item{
-    margin: 20px;
+.list-group-item {
     font-size: 25px;
     margin-left: 35px;
 }
@@ -22,10 +22,22 @@
 }
 
 .tall {
-    height: 65%;
+    height: 350px;
 }
 
 .forecast {
     background: blue;
     color: white;
+}
+
+.margin {
+    margin: 10px;
+    width: 17%;
+    height: 200px;
+}
+
+.card-style {
+    width: 92%;
+    margin: 10px;
+    margin-top: 20px;
 }

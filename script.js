@@ -1,12 +1,14 @@
+$(document).ready(function(){
+$("#one .list-group-item").val(localStorage.getItem("first"));
+
 $("#button-addon2").on("click", function(){
     var parent = $(this).parents();
     var citySearch = $(parent).find(".form-control").val();
+    console.log(citySearch);
     currentWeather(citySearch);
-    forecast(citySearch)
+    forecast(citySearch);
+    localStorage.setItem("first", JSON.stringify(citySearch));
 });    
-
-var lat;
-var lon;
 
 function currentWeather(param){
 var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + param + "&appid=0d8fd75a76f5d938dcb8f8d22cc34916";
@@ -90,7 +92,7 @@ function forecast(param){
         $(".humidity4").text("Humidity: " + humid4 + "%");
         $(".humidity5").text("Humidity: " + humid5 + "%");
     })
-}
+}})
 
 
 

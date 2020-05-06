@@ -11,7 +11,7 @@
     <div id = "header"><h1>Weather Dashboard</h1></div>
     <div class ="row">
         <div class = "col-md-4">
-            <div class="input-group mb-3">
+            <div class="input-group ">
                 <input type="text" class="form-control" placeholder="Search for a City" aria-describedby="button-addon2">
                 <div class="input-group-append">
                   <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
@@ -19,17 +19,20 @@
               </div>
               <div class ="row">
                 <div class="list-group">
-                    <button type="button" class="list-group-item list-group-item-action">Cras justo odio</button>
-                    <button type="button" class="list-group-item list-group-item-action">Dapibus ac facilisis in</button>
-                    <button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
-                    <button type="button" class="list-group-item list-group-item-action">Porta ac consectetur ac</button>
-                    <button type="button" class="list-group-item list-group-item-action">Vestibulum at eros</button>
+                    <button type="button" class="list-group-item list-group-item-action" id="1"></button>
+                    <button type="button" class="list-group-item list-group-item-action" id="2"></button>
+                    <button type="button" class="list-group-item list-group-item-action" id="3"></button>
+                    <button type="button" class="list-group-item list-group-item-action" id="4"></button>
+                    <button type="button" class="list-group-item list-group-item-action" id="5"></button>
+                    <button type="button" class="list-group-item list-group-item-action" id="6"></button>
+                    <button type="button" class="list-group-item list-group-item-action" id="7"></button>
+                    <button type="button" class="list-group-item list-group-item-action" id="8"></button>
                   </div>
               </div>
         </div>
         <div class = "col-md-8">
             <div class = "row tall">
-                <div class="card">
+                <div class="card card-style">
                   <div class="card-body">
                     <h3 class="card-title current"></h3>
                     <p class="card-text temp"></p>
@@ -42,7 +45,7 @@
             </div>
             <div class = "row"><h3>5-Day Forecast</h3></div>
             <div class="row"> 
-            <div class="card">
+            <div class="card margin">
                 <div class="card-body forecast">
                   <h5 class="card-title date1"></h5>
                   <p class="card-text icon1"></p>
@@ -50,7 +53,7 @@
                   <p class="card-text humidity1"></p>
                 </div>
               </div>
-              <div class="card">
+              <div class="card margin">
                 <div class="card-body forecast">
                   <h5 class="card-title date2"></h5>
                   <p class="card-text icon2"></p>
@@ -58,7 +61,7 @@
                   <p class="card-text humidity2"></p>
                 </div>
               </div>
-              <div class="card">
+              <div class="card margin">
                 <div class="card-body forecast">
                   <h5 class="card-title date3"></h5>
                   <p class="card-text icon3"></p>
@@ -66,7 +69,7 @@
                   <p class="card-text humidity3"></p>
                 </div>
               </div>
-              <div class="card">
+              <div class="card margin">
                 <div class="card-body forecast">
                   <h5 class="card-title date4"></h5>
                   <p class="card-text icon4"></p>
@@ -74,7 +77,7 @@
                   <p class="card-text humidity4"></p>
                 </div>
               </div>
-              <div class="card">
+              <div class="card margin">
                 <div class="card-body forecast">
                   <h5 class="card-title date5"></h5>
                   <p class="card-text icon5"></p>
