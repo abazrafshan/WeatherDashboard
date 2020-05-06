@@ -9,8 +9,7 @@ var lat;
 var lon;
 
 function currentWeather(param){
-var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + 
-param + "&appid=0d8fd75a76f5d938dcb8f8d22cc34916";
+var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + param + "&appid=0d8fd75a76f5d938dcb8f8d22cc34916";
 $.ajax({
     url: queryURL,
     method: "GET"
@@ -52,7 +51,16 @@ $.ajax({
     })
 })};
 
-// function forecast
+function forecast(param){
+    var queryURL5 = "http://api.openweathermap.org/data/2.5/forecast?q=" + param + "&appid=0d8fd75a76f5d938dcb8f8d22cc34916";
+    $.ajax({
+        url: queryURL5,
+        method: "GET"
+    })
+    .then(function(response){
+        console.log(response);
+    })
+}
 
 
 
