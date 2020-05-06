@@ -24,3 +24,8 @@
 .tall {
     height: 65%;
 }
+
+.forecast {
+    background: blue;
+    color: white;
+}

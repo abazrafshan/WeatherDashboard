@@ -21,12 +21,12 @@ $.ajax({
     var lon = response.coord.lon;
     var citySearchDate = $(".card-title.current").text(response.name + ", " + response.sys.country + " (" + date + ")");
     console.log(response.weather.icon);
-    var cityTemp = ((((response.main.temp - 273.15)*1.8)+32).toFixed());
+    var cityTemp = ((((response.main.temp - 273.15)*1.8)+32).toFixed(1));
     var cityTempTag = $(".temp").text("Temperature: " + cityTemp + " F");
     var humidity = response.main.humidity;
     humidityTag = $(".humidity").text("Humidity: " + humidity + "%");
     var windSpeed = response.wind.speed;
-    var windSpeedTag = $(".wind-speed").text("Wind Speed: " + windSpeed + "mph");
+    var windSpeedTag = $(".wind-speed").text("Wind Speed: " + windSpeed + " MPH");
     var queryURLUV = "http://api.openweathermap.org/data/2.5/uvi?appid=0d8fd75a76f5d938dcb8f8d22cc34916&lat=" + lat + "&lon=" + lon;
     $.ajax({
         url: queryURLUV,
@@ -59,6 +59,36 @@ function forecast(param){
     })
     .then(function(response){
         console.log(response);
+        var plus1 = moment().add(1, 'days').format('LL');
+        var plus2 = moment().add(2, 'days').format('LL');
+        var plus3 = moment().add(3, 'days').format('LL');
+        var plus4 = moment().add(4, 'days').format('LL');
+        var plus5 = moment().add(5, 'days').format('LL');
+        $(".date1").text(plus1);
+        $(".date2").text(plus2);
+        $(".date3").text(plus3);
+        $(".date4").text(plus4);
+        $(".date5").text(plus5);
+        var temp1 = ((((response.list[0].main.temp - 273.15)*1.8)+32).toFixed(2));
+        var temp2 = ((((response.list[1].main.temp - 273.15)*1.8)+32).toFixed(2));
+        var temp3 = ((((response.list[2].main.temp - 273.15)*1.8)+32).toFixed(2));
+        var temp4 = ((((response.list[3].main.temp - 273.15)*1.8)+32).toFixed(2));
+        var temp5 = ((((response.list[4].main.temp - 273.15)*1.8)+32).toFixed(2));
+        $(".temp1").text("Temp: " + temp1 + " F");
+        $(".temp2").text("Temp: " + temp2 + " F");
+        $(".temp3").text("Temp: " + temp3 + " F");
+        $(".temp4").text("Temp: " + temp4 + " F");
+        $(".temp5").text("Temp: " + temp5 + " F");
+        var humid1 = response.list[0].main.humidity;
+        var humid2 = response.list[1].main.humidity;
+        var humid3 = response.list[2].main.humidity;
+        var humid4 = response.list[3].main.humidity;
+        var humid5 = response.list[4].main.humidity;
+        $(".humidity1").text("Humidity: " + humid1 + "%");
+        $(".humidity2").text("Humidity: " + humid2 + "%");
+        $(".humidity3").text("Humidity: " + humid3 + "%");
+        $(".humidity4").text("Humidity: " + humid4 + "%");
+        $(".humidity5").text("Humidity: " + humid5 + "%");
     })
 }
 
