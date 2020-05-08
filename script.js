@@ -87,16 +87,16 @@ function forecast(param){
     })
     .then(function(response){
         console.log(response);
-        var plus1 = moment().add(1, 'days').format('LL');
-        var plus2 = moment().add(2, 'days').format('LL');
-        var plus3 = moment().add(3, 'days').format('LL');
-        var plus4 = moment().add(4, 'days').format('LL');
-        var plus5 = moment().add(5, 'days').format('LL');
-        $(".date1").text(plus1);
-        $(".date2").text(plus2);
-        $(".date3").text(plus3);
-        $(".date4").text(plus4);
-        $(".date5").text(plus5);
+        $(".date1").text(moment().add(1, 'days').format('LL'));
+        $(".date2").text(moment().add(2, 'days').format('LL'));
+        $(".date3").text(moment().add(3, 'days').format('LL'));
+        $(".date4").text(moment().add(4, 'days').format('LL'));
+        $(".date5").text(moment().add(5, 'days').format('LL'));
+        $(".icon1").attr("src", "http://openweathermap.org/img/wn/" + response.list[7].weather[0].icon + ".png");
+        $(".icon2").attr("src", "http://openweathermap.org/img/wn/" + response.list[15].weather[0].icon + ".png");
+        $(".icon3").attr("src", "http://openweathermap.org/img/wn/" + response.list[23].weather[0].icon + ".png");
+        $(".icon4").attr("src", "http://openweathermap.org/img/wn/" + response.list[31].weather[0].icon + ".png");
+        $(".icon5").attr("src", "http://openweathermap.org/img/wn/" + response.list[39].weather[0].icon + ".png");
         var temp1 = ((((response.list[7].main.temp - 273.15)*1.8)+32).toFixed(2));
         var temp2 = ((((response.list[15].main.temp - 273.15)*1.8)+32).toFixed(2));
         var temp3 = ((((response.list[23].main.temp - 273.15)*1.8)+32).toFixed(2));
@@ -107,16 +107,11 @@ function forecast(param){
         $(".temp3").text("Temp: " + temp3 + " F");
         $(".temp4").text("Temp: " + temp4 + " F");
         $(".temp5").text("Temp: " + temp5 + " F");
-        var humid1 = response.list[7].main.humidity;
-        var humid2 = response.list[15].main.humidity;
-        var humid3 = response.list[23].main.humidity;
-        var humid4 = response.list[31].main.humidity;
-        var humid5 = response.list[39].main.humidity;
-        $(".humidity1").text("Humidity: " + humid1 + "%");
-        $(".humidity2").text("Humidity: " + humid2 + "%");
-        $(".humidity3").text("Humidity: " + humid3 + "%");
-        $(".humidity4").text("Humidity: " + humid4 + "%");
-        $(".humidity5").text("Humidity: " + humid5 + "%");
+        $(".humidity1").text("Humidity: " + response.list[7].main.humidity + "%");
+        $(".humidity2").text("Humidity: " + response.list[15].main.humidity + "%");
+        $(".humidity3").text("Humidity: " + response.list[23].main.humidity + "%");
+        $(".humidity4").text("Humidity: " + response.list[31].main.humidity + "%");
+        $(".humidity5").text("Humidity: " + response.list[39].main.humidity + "%");
     })
 }})
 
