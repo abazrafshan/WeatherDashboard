@@ -11,12 +11,14 @@
     <div id = "header"><h1>Weather Dashboard</h1></div>
     <div class ="row">
         <div class = "col-md-4">
-            <div class="input-group ">
+            <!--city search button  -->
+          <div class="input-group ">
                 <input type="text" class="form-control" placeholder="Search for a City" aria-describedby="button-addon2">
                 <div class="input-group-append">
                   <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
                 </div>
               </div>
+              <!-- lists city search history -->
               <div class ="row">
                 <ul class="list-group cities">
                   </ul>
@@ -24,12 +26,18 @@
         </div>
         <div class = "col-md-8">
             <div class = "row tall">
+              <!-- card displaying current weather conditions -->
                 <div class="card card-style">
                   <div class="card-body">
+                    <!-- displays city name and todays date -->
                     <h3 class="card-title current"></h3>
+                    <!-- displays current temp -->
                     <p class="card-text temp"></p>
+                    <!-- displays current humidity -->
                     <p class="card-text humidity"></p>
+                    <!-- displays current wind speed -->
                     <p class="card-text wind-speed"></p>
+                    <!-- displays current uv index -->
                     <p style = "display: inline-block" class="card-text">UV Index: </p>
                     <div style = "display: inline-block" class = "uv">
                     </div>
@@ -37,13 +45,18 @@
                   </div>
                 </div>
             </div>
+            <!-- set of 5 cards to display the 5 day forecast -->
             <div class = "row padding-left"><h3>5-Day Forecast</h3></div>
             <div class="row"> 
             <div class="card margin  ">
                 <div class="card-body forecast">
+                  <!-- forecast date -->
                   <h5 class="card-title date1"></h5>
+                  <!-- forecast icon -->
                   <img class = "icon1">
+                  <!-- forecast temp -->
                   <p class="card-text temp1"></p>
+                  <!-- forecast humidity -->
                   <p class="card-text humidity1"></p>
                 </div>
               </div>
