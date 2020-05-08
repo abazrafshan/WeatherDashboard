@@ -75,7 +75,7 @@ $.ajax({
         else if (uvindex >= 11){
             $(".uv").css("background-color", "violet");
         }
-        $(".uv").text("UV Index: " + uvindex);
+        $(".uv").text(uvindex);
     })
 })};
 
