@@ -94,10 +94,10 @@ function forecast(param){
         $(".date4").text(plus4);
         $(".date5").text(plus5);
         var temp1 = ((((response.list[0].main.temp - 273.15)*1.8)+32).toFixed(2));
-        var temp2 = ((((response.list[1].main.temp - 273.15)*1.8)+32).toFixed(2));
-        var temp3 = ((((response.list[2].main.temp - 273.15)*1.8)+32).toFixed(2));
-        var temp4 = ((((response.list[3].main.temp - 273.15)*1.8)+32).toFixed(2));
-        var temp5 = ((((response.list[4].main.temp - 273.15)*1.8)+32).toFixed(2));
+        var temp2 = ((((response.list[8].main.temp - 273.15)*1.8)+32).toFixed(2));
+        var temp3 = ((((response.list[16].main.temp - 273.15)*1.8)+32).toFixed(2));
+        var temp4 = ((((response.list[24].main.temp - 273.15)*1.8)+32).toFixed(2));
+        var temp5 = ((((response.list[32].main.temp - 273.15)*1.8)+32).toFixed(2));
         $(".temp1").text("Temp: " + temp1 + " F");
         $(".temp2").text("Temp: " + temp2 + " F");
         $(".temp3").text("Temp: " + temp3 + " F");
